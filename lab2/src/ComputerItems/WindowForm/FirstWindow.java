@@ -12,8 +12,9 @@ import java.util.Map;
 public class FirstWindow  extends JFrame {
     private JButton addButton = new JButton("Добавить");
     private JButton deleteButton = new JButton("Удалить");
+    private JButton updateButton = new JButton("Изменить");
     private JComboBox classes = new JComboBox();
-    private JTable table;
+    public static JTable table;
     public static DefaultTableModel model;
     public static Map<String,Object> allObjects = new HashMap<>();
     public static String selectClass="Cache";
@@ -58,14 +59,29 @@ public class FirstWindow  extends JFrame {
         model.addColumn("");
         JScrollPane scrollPane = new JScrollPane();
         table = new JTable(model);
+
         scrollPane.setViewportView(table);
 
         panel.add(addButton);
         panel.add(deleteButton);
+        panel.add(updateButton);
         panel.add(scrollPane, BorderLayout.CENTER);
-
-        addButton.addActionListener(new ButtonEventListener());
+        addButton.addActionListener(new WindowAdd());
+        updateButton.addActionListener(new WindowUpdate());
         setContentPane(panel);
-        setSize(500, 500);
+        setSize(600, 500);
+    }
+
+    public static void updateTable(){
+        deleteAllRows(FirstWindow.model);
+        for (Map.Entry<String,Object> item : FirstWindow.allObjects.entrySet()) {
+            FirstWindow.model.addRow(new String[]{item.getKey()});
+        }
+
+    }
+    private static void deleteAllRows(final DefaultTableModel model) {
+        for( int i = model.getRowCount() - 1; i >= 0; i-- ) {
+            model.removeRow(i);
+        }
     }
 }
