@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42bd5e5-9f6a-4ddd-bfd1-3576ac325050" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/ComponentMaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/ButtonEventListener.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/myrefl/GenerateInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/ComputerItems/WindowForm/FirstWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2/ComputerItems/WindowForm/FirstWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/ComputerItems/WindowForm/WindowUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2/ComputerItems/WindowForm/WindowUpdate.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,12 +20,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+            <state relative-caret-position="303">
+              <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-end-line="79" />
             </state>
           </provider>
         </entry>
@@ -39,11 +39,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/ComponentMaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
+            <state relative-caret-position="173">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,17 +66,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="43" column="55" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="55" />
+            <state relative-caret-position="168">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="232">
+              <caret line="29" column="14" selection-start-line="29" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,28 +85,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java">
+        <entry file="file://$PROJECT_DIR$/ComputerItems/myrefl/GenerateInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/javax/swing/JTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="2718" column="18" selection-start-line="2718" selection-start-column="18" selection-end-line="2718" selection-end-column="18" />
+            <state relative-caret-position="84">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -114,13 +108,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java" />
         <option value="$PROJECT_DIR$/ComputerItems/WindowForm/ButtonEventListener.java" />
         <option value="$PROJECT_DIR$/ComputerItems/WindowForm/ComponentMaker.java" />
-        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java" />
-        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java" />
         <option value="$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java" />
+        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java" />
         <option value="$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java" />
+        <option value="$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java" />
+        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObject.java" />
+        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java" />
+        <option value="$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObj.java" />
       </list>
     </option>
   </component>
@@ -177,7 +173,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554910930922" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555002386766" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -223,12 +220,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554893000984</updated>
-      <workItem from="1554893002926" duration="9944000" />
+      <workItem from="1554893002926" duration="12875000" />
+      <workItem from="1555000829708" duration="1534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9944000" />
+    <option name="totallyTimeSpent" value="14409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="28" width="1372" height="780" extended-state="0" />
@@ -239,10 +237,8 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25454545" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Duplicate detector" weight="0.329235" />
-      <window_info anchor="bottom" id="Messages" weight="0.329235" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
@@ -250,11 +246,13 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.2757437" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.27459016" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Duplicate detector" order="12" weight="0.329235" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.329235" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -280,13 +278,6 @@
     <entry file="file://$PROJECT_DIR$/lab2.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/javax/swing/JTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="2718" column="18" selection-start-line="2718" selection-start-column="18" selection-end-line="2718" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -294,17 +285,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/javax/swing/JTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="227">
+          <caret line="2718" column="18" selection-start-line="2718" selection-start-column="18" selection-end-line="2718" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/GenerateInstance.java">
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state relative-caret-position="63">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/myrefl/GetFields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="29" column="14" selection-start-line="29" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/ComponentMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="783" column="20" selection-start-line="783" selection-start-column="20" selection-end-line="783" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/myrefl/GenerateInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-end-line="79" />
         </state>
       </provider>
     </entry>
@@ -315,34 +361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/FirstWindow.java">
+    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/DeleteObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/ComponentMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowAdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComputerItems/WindowForm/WindowUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="278">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

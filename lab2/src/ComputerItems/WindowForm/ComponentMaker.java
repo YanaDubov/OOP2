@@ -5,6 +5,8 @@ import ComputerItems.myrefl.MethodName;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -52,7 +54,7 @@ public class ComponentMaker {
                             comboBoxClass.addItem(myObj.getKey());
                     }
                     try{
-                        comboBoxClass.setSelectedItem(item.values);
+                        comboBoxClass.setSelectedItem(FirstWindow.getKeyValue(item.values));
                     }catch (NullPointerException e){
                         comboBoxClass.setSelectedItem(-1);
                     }
@@ -67,6 +69,16 @@ public class ComponentMaker {
                         ((JTextField) componentText).setText(item.values.toString());
                     }catch(NullPointerException e){
                         ((JTextField) componentText).setText("");
+                    }
+                    if(item.getType().equals(int.class)){
+                        componentText.addKeyListener(new KeyAdapter() {
+                            public void keyTyped(KeyEvent e) {
+                                char c = e.getKeyChar();
+                                if ( ((c < '0') || (c > '9'))) {
+                                    e.consume();
+                                }
+                            }
+                        });
                     }
                     panel.add(componentText);
                 }
@@ -92,7 +104,9 @@ public class ComponentMaker {
             if (comp instanceof JComboBox){
                 JComboBox jComboBox =(JComboBox) comp;
                 System.out.println("Combobox: " + jComboBox.getName() + " " + jComboBox.getSelectedItem());
-                value = jComboBox.getSelectedItem();
+                try {
+                    value = jComboBox.getSelectedItem().equals("") ? null : jComboBox.getSelectedItem();
+                }catch (NullPointerException e){}
             }
             if ((label != "") && (value != null)){
                 for (MethodName meth : mass) {
@@ -108,4 +122,5 @@ public class ComponentMaker {
             }
         }
     }
+
 }

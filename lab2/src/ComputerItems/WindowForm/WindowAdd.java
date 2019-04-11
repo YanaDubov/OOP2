@@ -1,19 +1,16 @@
 package ComputerItems.WindowForm;
 
+import ComputerItems.myrefl.GenerateInstance;
 import ComputerItems.myrefl.GetClass;
 import ComputerItems.myrefl.GetFields;
 import ComputerItems.myrefl.MethodName;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Map;
 
 import static ComputerItems.WindowForm.FirstWindow.selectClass;
 

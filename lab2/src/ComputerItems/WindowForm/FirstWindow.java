@@ -8,15 +8,16 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class FirstWindow  extends JFrame {
     private JButton addButton = new JButton("Добавить");
     private JButton deleteButton = new JButton("Удалить");
-    private JButton updateButton = new JButton("Изменить");
+    private JButton updateButton = new JButton("Просмотреть/Изменить");
     private JComboBox classes = new JComboBox();
     public static JTable table;
     public static DefaultTableModel model;
-    public static Map<String,Object> allObjects = new HashMap<>();
+    public static Map<String,Object> allObjects = new ConcurrentHashMap<>();
     public static String selectClass="Cache";
 
     public FirstWindow() throws HeadlessException {
@@ -68,13 +69,15 @@ public class FirstWindow  extends JFrame {
         panel.add(scrollPane, BorderLayout.CENTER);
         addButton.addActionListener(new WindowAdd());
         updateButton.addActionListener(new WindowUpdate());
+        deleteButton.addActionListener(new DeleteObj());
+
         setContentPane(panel);
-        setSize(600, 500);
+        setSize(650, 500);
     }
 
     public static void updateTable(){
         deleteAllRows(FirstWindow.model);
-        for (Map.Entry<String,Object> item : FirstWindow.allObjects.entrySet()) {
+        for (Map.Entry<String,Object> item : allObjects.entrySet()) {
             FirstWindow.model.addRow(new String[]{item.getKey()});
         }
 
@@ -83,5 +86,13 @@ public class FirstWindow  extends JFrame {
         for( int i = model.getRowCount() - 1; i >= 0; i-- ) {
             model.removeRow(i);
         }
+    }
+    public static String getKeyValue(Object currObject){
+        for (Map.Entry<String,Object> item : allObjects.entrySet()) {
+           if (item.getValue().equals(currObject)){
+               return item.getKey();
+           }
+        }
+        return  null;
     }
 }

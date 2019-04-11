@@ -1,5 +1,6 @@
 package ComputerItems.WindowForm;
 
+import ComputerItems.myrefl.GenerateInstance;
 import ComputerItems.myrefl.GetFields;
 import ComputerItems.myrefl.MethodName;
 
@@ -23,14 +24,15 @@ public class WindowUpdate extends JDialog implements ActionListener {
         String key = (String)FirstWindow.table.getValueAt(row, 0);
         Object current = FirstWindow.allObjects.get(key);
         formUpdate.setTitle(GetMyAnnotation.getClassAnnotation(current.getClass()));
-
         ArrayList<MethodName> fieldsNames = GetFields.field(current.getClass());
         formUpdate.setSize(450,fieldsNames.size()*100+50);
 
         GetFields.getFieldsValue(fieldsNames, current);
         ComponentMaker.drawComponent(fieldsNames,panelUpdate);
+
         JButton buttonChange = new JButton("Изменить");
         panelUpdate.add(buttonChange);
+
         buttonChange.addActionListener(e12 -> {
             Component[] comps = WindowUpdate.panelUpdate.getComponents();
             ComponentMaker.getComponentsData(fieldsNames, comps, panelUpdate);

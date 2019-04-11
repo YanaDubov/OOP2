@@ -1,13 +1,8 @@
 package ComputerItems.myrefl;
 
-
-
-import ComputerItems.WindowForm.FirstWindow;
 import ComputerItems.WindowForm.GetMyAnnotation;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class GetFields {
