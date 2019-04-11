@@ -2,11 +2,11 @@ package ComputerItems.WindowForm;
 
 
 import ComputerItems.Main;
+import ComputerItems.myrefl.DeleteObj;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

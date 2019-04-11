@@ -1,5 +1,6 @@
-package ComputerItems.WindowForm;
+package ComputerItems.myrefl;
 
+import ComputerItems.WindowForm.FirstWindow;
 import ComputerItems.myrefl.GenerateInstance;
 import ComputerItems.myrefl.GetFields;
 import ComputerItems.myrefl.MethodName;
