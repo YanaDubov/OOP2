@@ -19,20 +19,19 @@ public class WindowAdd extends JDialog implements ActionListener {
     private static JDialog form2;
     private static JPanel panel;
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         form2 = new JDialog();
         panel = new JPanel();
         form2.add(panel);
-        panel.setLayout(new FlowLayout(20,20,20));
+        panel.setLayout(new FlowLayout(20, 20, 20));
 
-        Class <? > cl=(Class<? >) GetClass.getFullClass(selectClass) ;
+        Class<?> cl = (Class<?>) GetClass.getFullClass(selectClass);
         form2.setTitle(GetMyAnnotation.getClassAnnotation(cl));
 
         ArrayList<MethodName> fieldsName = GetFields.field(cl);
-        form2.setSize(450,fieldsName.size()*100+50);
-        ComponentMaker.drawComponent(fieldsName,panel);
+        form2.setSize(450, fieldsName.size() * 100 + 50);
+        ComponentMaker.drawComponent(fieldsName, panel);
 
         JButton button = new JButton("Добавить");
         panel.add(button);
@@ -41,16 +40,11 @@ public class WindowAdd extends JDialog implements ActionListener {
             ComponentMaker.getComponentsData(fieldsName, comps, panel);
 
             Object newObject = GenerateInstance.getNewObject(cl);
-            assert newObject != null;
-            GenerateInstance.setFields(newObject,fieldsName);
+            GenerateInstance.setFields(newObject, fieldsName);
             form2.dispatchEvent(new WindowEvent(form2, WindowEvent.WINDOW_CLOSING));
             FirstWindow.updateTable();
         });
 
-
         form2.setVisible(true);
     }
-
-
-
 }

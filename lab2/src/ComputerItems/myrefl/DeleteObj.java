@@ -1,9 +1,6 @@
 package ComputerItems.myrefl;
 
 import ComputerItems.WindowForm.FirstWindow;
-import ComputerItems.myrefl.GenerateInstance;
-import ComputerItems.myrefl.GetFields;
-import ComputerItems.myrefl.MethodName;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +18,6 @@ public class DeleteObj implements ActionListener {
         ArrayList<MethodName> fieldsNames;
         String[] arr = currentObj.getClass().toString().split("\\.");
         String selectClass = arr[arr.length - 1];
-        Object nullObj = null;
         for (Map.Entry<String,Object> item : FirstWindow.allObjects.entrySet()) {
 
             fieldsNames = GetFields.field(item.getValue().getClass());
@@ -30,10 +26,11 @@ public class DeleteObj implements ActionListener {
                     if (itemMass.getLabel().equals(selectClass)) {
                         Method method = item.getValue().getClass().getMethod("get" + itemMass.getLabel());
                         itemMass.values = method.invoke(item.getValue());
-                        if (itemMass.values.equals(currentObj)){
+                        if (itemMass.values != null && itemMass.values.equals(currentObj)){
                             method = item.getValue().getClass().getMethod("set" + itemMass.getLabel(), itemMass.getType());
-                            method.invoke(item.getValue(),nullObj);
+                            method.invoke(item.getValue(), (Object) null); //
                         }
+
                     }
                 } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e1) {
                     e1.printStackTrace();

@@ -4,6 +4,7 @@ public class MethodName {
     private String label;
     private String annotalion;
     public Class<?> type;
+    public Object values;
 
     public String getAnnotalion() {
         return annotalion;
@@ -13,7 +14,7 @@ public class MethodName {
         this.annotalion = annotalion;
     }
 
-    public Object values;
+
 
     public MethodName(String label,String annotalion, Class<?> type, Object values) {
         this.label = label;

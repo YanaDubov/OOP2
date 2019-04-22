@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
 
-    public static   List<Class<? extends Object>> allClassNames = new ArrayList<>();
+    public static List<Class<? extends Object>> allClassNames = new ArrayList<>();
 
 
     public static void main(String[] args){
