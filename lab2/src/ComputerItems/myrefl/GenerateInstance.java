@@ -27,7 +27,7 @@ public class GenerateInstance {
                 method = newObj.getClass().getMethod("set" + item.getLabel(), item.getType());
                 if (item.values != null && !item.values.equals("")) {
 
-                    if (item.getType().equals(int.class)) {
+                    if (item.getType().equals(Integer.class)) {
                         method.invoke(newObj, Integer.parseInt(item.getValues().toString()));// тут item.getValues() строка, надо сделать типа Type
                     } else
                         method.invoke(newObj, item.getType().cast(item.getValues()));

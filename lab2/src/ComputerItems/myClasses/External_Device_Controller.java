@@ -3,7 +3,9 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
-public class External_Device_Controller extends Computer_item {
+import java.io.Serializable;
+
+public class External_Device_Controller extends Computer_item implements Serializable {
     public Standart standart;
     public enum Standart{
         ANSI,

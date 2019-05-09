@@ -3,7 +3,9 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
-public class Computer_item {
+import java.io.Serializable;
+
+public class Computer_item implements Serializable {
 
     public String producer;
     public String model;

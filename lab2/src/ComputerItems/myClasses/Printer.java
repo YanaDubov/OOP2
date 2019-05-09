@@ -3,8 +3,10 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
+import java.io.Serializable;
+
 @MyAnnotation( name = "Принтер")
-public class Printer  {
+public class Printer implements Serializable {
 
     private Kind kind;
     private String color;

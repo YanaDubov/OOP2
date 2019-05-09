@@ -3,8 +3,10 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
+import java.io.Serializable;
+
 @MyAnnotation(name = "Контролер ввода-вывода")
-public class Controller_IO extends External_Device_Controller {
+public class Controller_IO extends External_Device_Controller implements Serializable {
     Printer printer;
     Mouse mouse;
     @MyAnnotation( name = " Принтер")

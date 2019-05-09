@@ -3,8 +3,10 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
+import java.io.Serializable;
+
 @MyAnnotation( name = "Клавиатура")
-public class Keyboard  {
+public class Keyboard implements Serializable {
     private String port;
     private String constructor;
     private String purpose;

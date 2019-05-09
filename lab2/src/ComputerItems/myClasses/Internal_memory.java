@@ -3,24 +3,26 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
-public class Internal_memory extends Computer_item {
-    public int size;
-    public int speed;
+import java.io.Serializable;
+
+public class Internal_memory extends Computer_item implements Serializable {
+    public Integer size;
+    public Integer speed;
     @MyAnnotation( name = "Размер")
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
     @MyAnnotation( name = "Размер")
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
     @MyAnnotation( name = "Скорость доступа")
-    public int getSpeed() {
+    public Integer getSpeed() {
         return speed;
     }
     @MyAnnotation( name = "Скорость доступа")
-    public void setSpeed(int speed) {
+    public void setSpeed(Integer speed) {
         this.speed = speed;
     }
 }

@@ -3,12 +3,14 @@ package ComputerItems.myClasses;
 
 import ComputerItems.WindowForm.MyAnnotation;
 
+import java.io.Serializable;
+
 @MyAnnotation(name="Мышь")
-public class Mouse {
+public class Mouse implements Serializable {
     @MyAnnotation(name = "Тип мыши")
     private Type type;
-    private int size;
-    private int dpi;
+    private Integer size;
+    private Integer dpi;
     private String model;
 
     @MyAnnotation(name = "Название модели")
@@ -38,17 +40,17 @@ public class Mouse {
     }
 
     @MyAnnotation(name = "Размер")
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
     @MyAnnotation(name = "Размер")
-    public void setSize(int size) { this.size = size; }
+    public void setSize(Integer size) { this.size = size; }
 
     @MyAnnotation(name = "DPI")
-    public int getDpi() { return dpi; }
+    public Integer getDpi() { return dpi; }
 
     @MyAnnotation(name = "DPI")
-    public void setDpi(int dpi) { this.dpi = dpi; }
+    public void setDpi(Integer dpi) { this.dpi = dpi; }
 
 }
