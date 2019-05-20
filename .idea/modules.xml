@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/base58/base32.iml" filepath="$PROJECT_DIR$/base58/base32.iml" />
       <module fileurl="file://$PROJECT_DIR$/base64/base64.iml" filepath="$PROJECT_DIR$/base64/base64.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lab2OOP.iml" filepath="$PROJECT_DIR$/lab2OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab2/lab2.iml" filepath="$PROJECT_DIR$/lab2/lab2.iml" />
     </modules>
   </component>
 </project>

@@ -31,10 +31,11 @@ public class Mouse implements Serializable {
         touchpad
     }
 
+    @MyAnnotation(name = "Тип")
     public Type getType() {
         return type;
     }
-
+    @MyAnnotation(name = "Тип")
     public void setType(Type type) {
         this.type = type;
     }

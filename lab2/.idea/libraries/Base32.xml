@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Base32">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/Base32-master/Base32.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

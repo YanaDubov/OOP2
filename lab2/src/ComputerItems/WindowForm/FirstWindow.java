@@ -7,20 +7,25 @@ import ComputerItems.myrefl.DeleteObj;
 import ComputerItems.myrefl.GenerateInstance;
 import ComputerItems.myrefl.GetFields;
 import ComputerItems.myrefl.MethodName;
+import ComputerItems.plugin.Plugin;
+import ComputerItems.plugin.PluginWithInformation;
 import ComputerItems.ser.BinarySerializator;
 import ComputerItems.ser.MySerializator;
 import ComputerItems.ser.Serializator;
-import ComputerItems.ser.XMLser;
-
+import ComputerItems.ser.XMLSerializator;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+
 
 public class FirstWindow extends JFrame {
     private JComboBox classes = new JComboBox();
@@ -29,7 +34,7 @@ public class FirstWindow extends JFrame {
     public static Map<String, Object> allObjects = new HashMap<>();
     public static String selectClass = "Cache";
     public static JPanel panel = new JPanel();
-
+    public static Map<String,Class<? extends Serializator>> serializers = new HashMap<>();
     public FirstWindow() throws HeadlessException {
         super("Лаба2");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -83,63 +88,155 @@ public class FirstWindow extends JFrame {
         addButton.addActionListener(new WindowAdd());
         updateButton.addActionListener(new WindowUpdate());
         deleteButton.addActionListener(new DeleteObj());
+
+        serializers.put("txt",MySerializator.class);
+        serializers.put("bin",BinarySerializator.class);
+        serializers.put("xml",XMLSerializator.class);
+
+
+        File folder = new File("resources");
+        File[] listOfFiles = folder.listFiles();
+        Map<String,PluginWithInformation> plugins = new HashMap<>();
+        PluginWithInformation pluginWithInformationEmply = new PluginWithInformation();
+        plugins.put(pluginWithInformationEmply.pluginName,pluginWithInformationEmply);
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                PluginWithInformation pluginWithInformation = new PluginWithInformation(file);
+                plugins.put(pluginWithInformation.pluginName,pluginWithInformation);
+            }
+        }
+
+
         saveButton.addActionListener(e -> {
+            try{
             JFrame parentFrame = new JFrame();
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Specify a file to save");
 
+            for (Map.Entry<String, Class<?extends Serializator>> item : serializers.entrySet()) {
+                FileNameExtensionFilter filter = new FileNameExtensionFilter (item.getKey(),item.getKey());
+                fileChooser.addChoosableFileFilter(filter);
+            }
+
+
+
+            JComboBox comboBox = new JComboBox();
+            comboBox.setEditable(true);
+            for (Map.Entry<String,PluginWithInformation> item : plugins.entrySet()) {
+                comboBox.addItem(item.getKey());
+            }
+            fileChooser.add(comboBox);
+
             int userSelection = fileChooser.showSaveDialog(parentFrame);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
-                File fileToSave = fileChooser.getSelectedFile();
-                Serializator serializator = getSerializator(fileToSave.getName());
+                FileFilter extension = fileChooser.getFileFilter();
+
+                Serializator serializator = serializers.get(extension.getDescription()).newInstance();
+                PluginWithInformation plugin = plugins.get(comboBox.getSelectedItem());
+
+                File fileToSave = new File(fileChooser.getSelectedFile() +"."+ (plugin.pluginExtention.equals("") ? extension.getDescription() : plugin.pluginExtention));
+
+
+
                 System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+
                 Vector<Object> objects = new Vector<>();
                 for (Map.Entry<String, Object> item : FirstWindow.allObjects.entrySet()) {
                     objects.add(item.getValue());
                 }
                 allObjects.clear();
-                BufferedOutputStream out = null;
-                try {
-                    out = new BufferedOutputStream(new FileOutputStream(fileToSave));
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
-                }
-                serializator.serialize(objects, out);
+                serialize(serializator,plugin.plugin,fileToSave,objects);
                 updateTable();
             }
+            } catch (IllegalAccessException | InstantiationException ex) {
+                ex.printStackTrace();
+            }
         });
+
+
         openButton.addActionListener(e -> {
-            JFrame parentFrame = new JFrame();
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setDialogTitle("Specify a file to read");
+            try {
+                JFrame parentFrame = new JFrame();
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setDialogTitle("Specify a file to read");
 
-            int userSelection = fileChooser.showSaveDialog(parentFrame);
-            if (userSelection == JFileChooser.APPROVE_OPTION) {
-                File fileToOpen = fileChooser.getSelectedFile();
-                Serializator serializator = getSerializator(fileToOpen.getAbsolutePath());
-                System.out.println("Open file: " + fileToOpen.getAbsolutePath());
-                BufferedInputStream in = null;
-                try {
-                    in = new BufferedInputStream(new FileInputStream(fileToOpen));
-                } catch (FileNotFoundException exx) {
-                    exx.printStackTrace();
-                }
-                ArrayList<MethodName> fields = new ArrayList<>();
-                Vector<Object> objects = (Vector<Object>) serializator.deserialize(in);
-                allObjects.clear();
-                for ( Object item : objects ) {
-                    fields = GetFields.field(item.getClass());
-                    GetFields.getFieldsValue(fields,item);
-                    GenerateInstance.setFields(item,fields);
 
+                for (Map.Entry<String, Class<? extends Serializator>> item : serializers.entrySet()) {
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter(item.getKey(), "b32", "b64", item.getKey());
+                    fileChooser.addChoosableFileFilter(filter);
                 }
-                updateTable();
+
+                int userSelection = fileChooser.showOpenDialog(parentFrame);
+                if (userSelection == JFileChooser.APPROVE_OPTION) {
+                    File fileToOpen = fileChooser.getSelectedFile();
+                    FileFilter extension = fileChooser.getFileFilter();
+
+                    Serializator serializator = serializers.get(extension.getDescription()).newInstance();
+                    String ext = fileToOpen.getName().substring(fileToOpen.getName().indexOf(".") + 1);
+                    Plugin plugin = null;
+                    for (Map.Entry<String, PluginWithInformation> item : plugins.entrySet()) {
+                        if (item.getValue().pluginExtention.equals(ext)) {
+                            plugin = item.getValue().plugin;
+                        }
+                    }
+                    System.out.println("Open file: " + fileToOpen.getAbsolutePath());
+
+                    ArrayList<MethodName> fields;
+                    Vector<Object> objects = deserialize(serializator, plugin, fileToOpen);
+                    allObjects.clear();
+                    for (Object item : objects) {
+                        fields = GetFields.field(item.getClass());
+                        GetFields.getFieldsValue(fields, item);
+                        GenerateInstance.setFields(item, fields);
+
+                    }
+                    updateTable();
+                }
+            } catch (IllegalAccessException | InstantiationException ex) {
+                ex.printStackTrace();
             }
         });
         setContentPane(panel);
         setSize(550, 500);
         exClass();
+
+
+    }
+
+    public static void serialize(Serializator serializator, Plugin plugin, File file, Vector<Object> objects ){
+        try {
+            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file));
+
+            if(plugin != null){
+                ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+                serializator.serialize(objects, byteOut);
+                plugin.encode(new ByteArrayInputStream(byteOut.toByteArray()),out);
+            }else {
+                serializator.serialize(objects, out);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static Vector<Object> deserialize(Serializator serializator, Plugin plugin, File file ){
+        try {
+
+            BufferedInputStream in = new BufferedInputStream(new FileInputStream(file));
+            if(plugin != null){
+                ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+                plugin.decode(in,byteOut);
+
+               return (Vector)serializator.deserialize(new ByteArrayInputStream(byteOut.toByteArray()));
+
+            }else {
+               return (Vector)serializator.deserialize(in);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static void updateTable() {
@@ -161,21 +258,6 @@ public class FirstWindow extends JFrame {
             if (item.getValue().equals(currObject)) {
                 return item.getKey();
             }
-        }
-        return null;
-    }
-
-    private static Serializator getSerializator(String filename) {
-        String ext = filename.substring(filename.indexOf(".") + 1);
-
-        if (ext.equals("txt")) {
-            return new MySerializator();
-        }
-        if (ext.equals("bin")) {
-            return new BinarySerializator();
-        }
-        if (ext.equals("xml")) {
-            return new XMLser();
         }
         return null;
     }

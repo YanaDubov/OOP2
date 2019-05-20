@@ -4,7 +4,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public interface Serializator {
-    void serialize(Object o, OutputStream outputStream);
-    Object deserialize(InputStream inputStream) ;
+    public void serialize(Object o, OutputStream outputStream);
+
+    public Object deserialize(InputStream inputStream);
 }
 

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="base64:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/base64_jar</output-path>
+    <root id="archive" name="base64.jar">
+      <element id="module-output" name="base64" />
+      <element id="module-output" name="lab2OOP" />
+      <element id="extracted-dir" path="$USER_HOME$/Projects/jar_files/jackson-annotations-2.9.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Projects/jar_files/jackson-core-2.9.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Projects/jar_files/jackson-databind-2.9.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/junit4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -67,7 +67,7 @@ public class ComponentMaker {
                     } catch (NullPointerException e) {
                         ((JTextField) componentText).setText("");
                     }
-                    if (item.getType().equals(int.class)) {
+                    if (item.getType().equals(Integer.class)) {
                         componentText.addKeyListener(new KeyAdapter() {
                             public void keyTyped(KeyEvent e) {
                                 char c = e.getKeyChar();
